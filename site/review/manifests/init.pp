@@ -1,5 +1,5 @@
 class review (
-  $user = 'review'
+  $user = 'review',
 ) {
   include review::files
   
