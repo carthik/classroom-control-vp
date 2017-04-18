@@ -43,4 +43,8 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  
+  system::managed_user { [ 'greg', 'larkin' ]:
+    password => '$1$M0IggaYh$HPsHSvfZWZvpYRcinrCpC.',
+  }
 }
