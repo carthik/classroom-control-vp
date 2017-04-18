@@ -11,6 +11,6 @@ class review::files {
      owner => 'root',
      group => 'root',
      mode => '0644',
-     source => epp('review/motd.epp'),
+     content => epp('review/motd.epp'),
    }
  }
