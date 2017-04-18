@@ -44,4 +44,6 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   include examples::practitioner
+  system::managed_user { ['hi','bye']:
+  }
 }
