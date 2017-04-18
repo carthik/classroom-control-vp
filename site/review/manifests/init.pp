@@ -1,6 +1,6 @@
-class review {
-
-$user = bob,
+class review (
+  $user = 'bob',
+){
 
 include review::files
 
