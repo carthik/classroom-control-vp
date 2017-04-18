@@ -47,7 +47,7 @@ node default {
   
   notify { "This is NPC branch": }
   
-  system::manager_user { 'npc':
+  system::managed_user { 'npc':
     ensure => present,
     password => 'dingleberries',
   }
