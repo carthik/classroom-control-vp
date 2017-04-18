@@ -1,4 +1,4 @@
-review {
+class review {
 
 include review::files
 
