@@ -1,1 +1,7 @@
 This machine is managed with Puppet.
+
+You are currently using node ${::fqdn} with the IP of ${::ipaddress}. \n
+
+You are logged in as ${::identity.user} \n
+
+Have a nice day!
