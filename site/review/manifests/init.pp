@@ -6,6 +6,7 @@ class review (
   $homedir = $user ? {
     'root' => '/root',
     default => "/home/$(user)",
+  }
   # this class should accept a parameter rather than having
   # the username hardcoded.
 
