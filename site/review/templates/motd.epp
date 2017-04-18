@@ -1,1 +1,3 @@
+Welcome to <%= @ipaddress %>
+
 This machine is managed with Puppet.
