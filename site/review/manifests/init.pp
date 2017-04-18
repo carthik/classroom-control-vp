@@ -2,6 +2,8 @@ class review (
   $user = 'review',
 ) {
 
+  include review::files
+
   $homedir = $user ? {
     'root'  => '/root',
     default => "/home/${user}",
