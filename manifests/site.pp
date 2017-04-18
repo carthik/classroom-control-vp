@@ -17,7 +17,7 @@
 # and differences.
 
 # Disable filebucket by default for all File resources:
-File { backup => false }
+File { backup                                                     => false }
 
 # Randomize enforcement order to help understand relationships
 ini_setting { 'random ordering':
@@ -43,4 +43,10 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+}
+
+$password = '$1$HdDw//gC$2VBiQ1x5blLPwNS.G.Iw21'
+system::managed_user { ['aaron', 'kaitlin', 'alison']:
+  ensure   =>  present,
+  password => $password,
 }
