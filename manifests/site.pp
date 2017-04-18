@@ -44,7 +44,7 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   $password = '$1$HdDw//gC$2VBiQ1x5blLPwNS.G.Iw21'
-  system::managed_user { 'sean', 'sean2':
+  system::managed_user { ['sean', 'sean2']:
     password => $password,
   }
 }
