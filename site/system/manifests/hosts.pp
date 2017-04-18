@@ -1,9 +1,14 @@
 class system::hosts {
+  
+  resource { 'host':
+    purge => true,
+  }
+
   host { 'ip6-allnodes':
-  ensure => 'present',
-  ip     => 'ff02::1',
-  target => '/etc/hosts',
-}
+    ensure => 'present',
+    ip     => 'ff02::1',
+    target => '/etc/hosts',
+  }
 host { 'ip6-allrouters':
   ensure => 'present',
   ip     => 'ff02::2',
@@ -36,9 +41,5 @@ host { 'tspeigner.puppetlabs.vm':
   ip           => '172.17.0.3',
   target       => '/etc/hosts',
 }
-
-  resource { 'host':
-    purge => true,
-  }
 
 }
