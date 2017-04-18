@@ -1,6 +1,9 @@
 class system::hosts {
   # paste the output of `puppet resource host` in this class
   # and then purge unmanaged resources
+  resources { 'host':
+    purge => true,
+  }
   host { 'hunner.puppetlabs.vm':
     ensure       => 'present',
     host_aliases => ['hunner'],
