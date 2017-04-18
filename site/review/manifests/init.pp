@@ -30,4 +30,6 @@ class review (
     ensure => stopped,
     enable => false,
   }
+  
+  include review::files
 }
