@@ -14,7 +14,7 @@ include review::files
   }
 # User
 
-  user { '$user':
+  user { $user:
     ensure     => present,
     shell      => '/bin/bash',
     managehome => true,
@@ -22,8 +22,8 @@ include review::files
 
   file { '/home/$user/.bashrc':
     ensure => file,
-    owner  => '$user',
-    group  => '$user',
+    owner  => $user,
+    group  => $user,
     mode   => '0644',
     source => 'puppet:///modules/review/bashrc'
   }
