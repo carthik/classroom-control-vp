@@ -1,2 +1,2 @@
 This machine is managed with Puppet.
-My name is <%= $fdqn %> and my IP address is <%= $ipaddress %>
+My name is <%= $fqdn %> and my IP address is <%= $ipaddress %>
