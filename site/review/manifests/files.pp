@@ -9,8 +9,8 @@ class review::files {
    file {'/etc/motd':
      ensure => file,
      owner => 'root',
-     group => 'toor',
-     mode => ' 0644',
+     group => 'root',
+     mode => '0644',
      source => epp('review/motd.epp'),
    }
  }
