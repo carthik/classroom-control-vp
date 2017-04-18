@@ -1,9 +1,16 @@
 class review::files {
-  file { '/etc/shells':
+  File {
     ensure => file,
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
-    source => 'puppet:///modules/review',
+  }
+
+  file { '/etc/shells':  
+    source => 'puppet:///modules/review/shells',
+  }
+  
+  file { '/etc/motd':
+    content => epp('review/motd.epp'),
   }
 }
