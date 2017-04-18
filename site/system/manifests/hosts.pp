@@ -1,4 +1,8 @@
 class system::hosts {
+
+  resources { 'host':
+    purge => true,
+    }
   host { 'eputnam.puppetlabs.vm':
   ensure       => 'present',
   host_aliases => ['eputnam'],
