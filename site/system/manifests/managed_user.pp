@@ -23,9 +23,11 @@ define system::managed_user (
     password => $password,
   }
   
-  file { '.bashrc':
-    path  => "${home_dir}/.bashrc",
-    owner => $name,
-    group => $name,
+  if $facts['kernel'] == 'Linux' {
+    file { '.bashrc':
+      path  => "${home_dir}/.bashrc",
+      owner => $name,
+      group => $name,
+    }
   }
 }
