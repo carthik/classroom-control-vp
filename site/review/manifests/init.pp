@@ -12,17 +12,17 @@ class review (
     default => "/home/$user",
   }
 
-  user { 'bob':
-    ensure     => present,
-    shell      => '/bin/bash',
+  user { $user:
+    ensure => present,
+    shell => '/bin/bash',
     managehome => true,
   }
 
-  file { '/home/bob/.bashrc':
+  file { "${homedir}/.bashrc":
     ensure => file,
-    owner  => 'bob',
-    group  => 'bob',
-    mode   => '0644',
+    owner => $user,
+    group => $user,
+    mode => '0644',
     source => 'puppet:///modules/review/bashrc'
   }
 
