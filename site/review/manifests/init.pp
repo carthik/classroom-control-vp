@@ -1,18 +1,18 @@
 class review {
 
+$user = bob
+
 include review::files
 
 # this class should accept a parameter rather than having
   # the username hardcoded.
 
   # Uncomment and use this variable where appropriate
-#  $homedir = $user ? {
-#    'root'  => '/root',
-#    default => "/home/$user",
-#  }
+  $homedir = $user ? {
+    'root'  => '/root',
+    default => "/home/$user",
+  }
 # User
-
-$user = bob,
 
   user { '$user':
     ensure     => present,
@@ -30,5 +30,10 @@ $user = bob,
 
   # add the proper resource to ensure that the Puppet agent is not running
   # in the background. How would you discover the service name?
+
+  service { 'puppet':
+    ensure  => stopped,
+    enable  => false,
+  }
 
 }
