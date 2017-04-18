@@ -20,7 +20,7 @@ include review::files
     managehome => true,
   }
 
-  file { '/home/$user/.bashrc':
+  file { '${homedir}/.bashrc':
     ensure => file,
     owner  => $user,
     group  => $user,
