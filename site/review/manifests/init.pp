@@ -15,7 +15,7 @@ class review(
     ensure     => present,
     shell      => '/bin/bash',
     managehome => true,
-    homedir    => $homedir,
+    home       => $homedir,
   }
 
   file { "${homedir}/.bashrc":
