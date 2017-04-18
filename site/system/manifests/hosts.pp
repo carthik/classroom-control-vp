@@ -1,6 +1,6 @@
 class system::hosts {
   
-  resource { 'host':
+  resources { 'host':
     purge => true,
   }
 
