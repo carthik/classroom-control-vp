@@ -21,9 +21,9 @@ class system::hosts {
   }
 
   ## Use your own IP, or the ::ipaddress fact
-  host { 'arafatm.puppetlabs.vm':
-    ensure       => present,
-    host_aliases => ['arafatm'],
-    ip           => $::ipaddress,
-  }
+  #host { 'arafatm.puppetlabs.vm':
+  #  ensure       => present,
+  #  host_aliases => ['arafatm'],
+  #  ip           => $::ipaddress,
+  #}
 }
