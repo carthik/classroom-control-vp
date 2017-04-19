@@ -42,10 +42,10 @@ class system::hosts {
     target       => '/etc/hosts',
   }
   
-  host { 'seantecha.puppetlabs.vm':
-    ensure       => 'present',
-    host_aliases => ['seantecha'],
-    ip           => '172.17.0.5',
-    target       => '/etc/hosts',
-  }
+  #host { 'seantecha.puppetlabs.vm':
+  #  ensure       => 'present',
+  #  host_aliases => ['seantecha'],
+  #  ip           => '172.17.0.5',
+  #  target       => '/etc/hosts',
+  #}
 }
