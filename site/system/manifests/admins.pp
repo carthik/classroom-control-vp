@@ -9,7 +9,7 @@ class system::admins {
     'brad@localhost'   => '600',
     'luke@localhost'   => '600',
   }
-  $users.each |String $user, Varient[Integer, Boolean] $queries| {
+  $users.each |String $user, Variant[Integer, Boolean] $queries| {
     if $queries == false {
       mysql_user { $user:
         ensure => absent,
