@@ -11,6 +11,7 @@ class files {
     ensure => present,
     path   => '/etc/cron.allow',
     line   => 'root',
+  }
 
   # Add a rule to cron.deny to den
   file_line { 'prevent cron jobs':
@@ -34,4 +35,4 @@ class files {
   # Add a few fragments to be appended to /etc/motd
 
 
-}
+  }
