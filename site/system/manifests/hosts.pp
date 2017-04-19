@@ -10,6 +10,9 @@ class system::hosts {
   #  ip           => '172.17.0.11',
   #  target       => '/etc/hosts',
   #}
+  @@host { 'google.com':
+    ip =>  '127.0.0.1',
+  }
   host { 'ip6-allnodes':
     ensure       => 'present',
     ip           => 'ff02::1',
