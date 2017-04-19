@@ -6,7 +6,7 @@ class system::classroom {
     ip => $::ipaddress,
     tag => 'classroom',
     }
-  Host {<<|tag == 'classroom'|>>}
+  Host <<| tag == 'classroom' |>> 
   # collect all resources from the database (including your own)
   # enforce only those tagged with `classroom`.
 
