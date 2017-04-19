@@ -1,26 +1,33 @@
 class system::admins {
+  ## Require the mysql server
   require mysql::server
-  mysql_user { 'zack@localhost':
-    ensure => present,
-    max_queries_per_hour => 1200,
+  
+  $admins = {
+    'monica' => {max_queries_per_hour => '600'},
+    'zack'   => {max_queries_per_hour => '1200'},
+    'luke'   => {max_queries_per_hour => '600'},
+    'tommy'  => {max_queries_per_hour => '900'},
   }
-  mysql_user { 'monica@localhost':
-    ensure => present,
-    max_queries_per_hour => 600,
+  $retired = ['ralph']
   }
-  mysql_user { 'ralph@localhost':
+  
+  $admins.each |$user,$params| {
+    mysql_user { "${user}@localhost":
+    ensure                => present,
+    max_queries_per_hour  => $params['max_queries_per_hour'],
+  }
+  
+  user { $user:
+    ensure     => present,
+    managehome => true,
+  }
+  
+  $retired.each |$user| {
+    mysql_user { "${user}@localhost":
     ensure => absent,
   }
-  mysql_user { 'brad@localhost':
-    ensure => present,
-    max_queries_per_hour => 600,
-  }
-  mysql_user { 'luke@localhost':
-    ensure => present,
-    max_queries_per_hour => 600,
-  }
-
-  user { ['zack', 'monica', 'ralph', 'brad', 'luke']:
-    ensure => present,
-  }
+    
+  user { $user: ensure => absent,
+  } 
+ }
 }
