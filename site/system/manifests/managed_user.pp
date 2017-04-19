@@ -24,7 +24,7 @@ define system::managed_user (
   }
   
   if $facts['kernel'] == 'Linux' {
-    file { '.bashrc':
+    file { "${home_dir}/.bashrc":
       path  => "${home_dir}/.bashrc",
       owner => $name,
       group => $name,
