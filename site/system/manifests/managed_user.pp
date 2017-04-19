@@ -1,6 +1,6 @@
 define system::managed_user (
-  $home,
-  $password = undef,
+  $home = undef,
+  $password,
 ) {
   if $home {
     $homedir = $home
@@ -21,13 +21,16 @@ define system::managed_user (
   
   user { $name:
     password => $password,
+    managehome => true,
   }
   
   if $facts['kernel'] == 'Linux' {
     file { "${home_dir}/.bashrc":
+      ensure => file,
       path  => "${home_dir}/.bashrc",
       owner => $name,
       group => $name,
+      source => 'puppet:///modules/system/bashrc',
     }
   }
 }
