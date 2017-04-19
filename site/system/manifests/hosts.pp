@@ -5,12 +5,12 @@ class system::hosts {
     purge => true,
   }
   
-  host { 'greglarkin.puppetlabs.vm':
-  ensure       => 'present',
-  host_aliases => ['greglarkin'],
-  ip           => '172.17.0.7',
-  target       => '/etc/hosts',
-}
+ # host { 'greglarkin.puppetlabs.vm':
+ # ensure       => 'present',
+ # host_aliases => ['greglarkin'],
+ # ip           => '172.17.0.7',
+#  target       => '/etc/hosts',
+#}
 host { 'ip6-allnodes':
   ensure => 'present',
   ip     => 'ff02::1',
