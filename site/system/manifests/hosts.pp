@@ -2,12 +2,12 @@ class system::hosts {
  resources { 'host':
     purge => true,
     }
-  host { 'eputnam.puppetlabs.vm':
-  ensure       => 'present',
-  host_aliases => ['eputnam'],
-  ip           => '172.17.0.6',
-  target       => '/etc/hosts',
-}
+#  host { 'eputnam.puppetlabs.vm':
+#  ensure       => 'present',
+#  host_aliases => ['eputnam'],
+#  ip           => '172.17.0.6',
+#  target       => '/etc/hosts',
+#  }
 host { 'ip6-allnodes':
   ensure => 'present',
   ip     => 'ff02::1',
