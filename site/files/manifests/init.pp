@@ -19,6 +19,8 @@ class files {
     line   => 'default',
   }
   # What concat resource is needed for this fragment to work?
+  concat { '/etc/motd': }
+  
   concat::fragment { 'motd header':
     target  => '/etc/motd',
     order   => '01',
