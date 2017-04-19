@@ -1,12 +1,12 @@
 class system::admins {
   require mysql::server
   
-  $active_admins = [ 
+  $active_admins = { 
     'zack' => { max_queries_per_hour => 1200 },
     'monica' => { max_queries_per_hour => 600 },
     'brad' => { max_queries_per_hour => 600 },
     'luke' => { max_queries_per_hour => 600 }
-  ]
+  }
   
   $inactive_admins = [ 'ralph' ]
   
