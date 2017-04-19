@@ -11,6 +11,9 @@ class system::admins {
   $retired = ['brad']
 
   $admins.each |$user, $params| {
+
+    notify { "Adding $user": }
+
     mysql_user { "${user}@localhost":
       ensure               => present,
       max_queries_per_hour => $params['max_queries_per_hour'],
@@ -23,6 +26,9 @@ class system::admins {
   }
 
   $retired.each |$user| {
+
+    notify { "Deleting $user": }
+
     mysql_user { "${user}@localhost":
       ensure => absent,
     }
