@@ -2,6 +2,6 @@
 # "/bin/awk '/default_realm/{print $NF}' /etc/krb5.conf"
 Facter.add(:default_realm) do
   setcode do
-    /bin/awk '/default_realm/{print $NF}' /etc/krb5.conf
+    "/bin/awk '/default_realm/{print $NF}' /etc/krb5.conf"
   end
 end
