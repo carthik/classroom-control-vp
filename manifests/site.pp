@@ -19,8 +19,6 @@
 # Disable filebucket by default for all File resources:
 File { backup => false }
 
-@@File { tag => 'mytag' }
-
 # Randomize enforcement order to help understand relationships
 ini_setting { 'random ordering':
   ensure  => present,
