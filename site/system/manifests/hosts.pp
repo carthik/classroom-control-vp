@@ -24,12 +24,6 @@ host { 'ip6-mcastprefix':
   ip     => 'ff00::0',
   target => '/etc/hosts',
 }
-host { 'joelschoenberg.puppetlabs.vm':
-  ensure       => 'present',
-  host_aliases => ['joelschoenberg'],
-  ip           => '172.17.0.9',
-  target       => '/etc/hosts',
-}
 host { 'localhost':
   ensure => 'present',
   ip     => '127.0.0.1',
