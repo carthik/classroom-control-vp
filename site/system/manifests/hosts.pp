@@ -34,10 +34,10 @@ host { 'master.puppetlabs.vm':
   ip           => '172.17.0.1',
   target       => '/etc/hosts',
 }
-host { 'nonplayer.puppetlabs.vm':
-  ensure       => 'present',
-  host_aliases => ['nonplayer'],
-  ip           => '172.17.0.10',
-  target       => '/etc/hosts',
-}
+#host { 'nonplayer.puppetlabs.vm':
+#  ensure       => 'present',
+#  host_aliases => ['nonplayer'],
+#  ip           => '172.17.0.10',
+#  target       => '/etc/hosts',
+#}
 }
