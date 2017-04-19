@@ -20,7 +20,7 @@ class system::admins {
     'ralph'
   ]
   
-  $users.each |String $user, Integer $query| {
+  $users.each |String $user, $query| {
     mysql_user { "${user}@localhost":
       ensure => present,
       max_queries_per_hour => $query['queries'],
