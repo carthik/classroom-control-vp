@@ -12,11 +12,11 @@ class system::hosts {
   #}
   @@host { 'google.com':
     ip =>  '127.0.0.1',
-    tags =>  'classroom',
+    tag =>  'classroom',
   }
   @@host { 'pwned.com':
     ip   => '127.0.0.1',
-    tags =>  'classroom',
+    tag =>  'classroom',
   }
   @@host { 'you.forgot.tags':
     ip =>  '127.0.0.1',
