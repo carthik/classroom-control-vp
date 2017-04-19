@@ -33,6 +33,11 @@ class files {
     content => epp('files/motd_header.epp'),
   }
 
+  files::motd { 'production warning':
+    order   => 5,
+    message =>  'This is a production machine. Please make changes in Puppet',
+  }
+
   # Add a few fragments to be appended to /etc/motd
 
 
