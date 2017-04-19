@@ -20,8 +20,9 @@ class system::admins {
       managehome => true,
     }
   }
-$retired.each |$user| {
-  mysql_user { "${user}@localhost":
-    ensure => absent,
+  $retired.each |$user| {
+    mysql_user { "${user}@localhost":
+      ensure => absent,
+    }
   }
 }
