@@ -25,9 +25,9 @@ define system::managed_user (
   }
   
   if $facts['kernel'] == 'Linux' {
-    file { "${home_dir}/.bashrc":
+    file { "${homedir}/.bashrc":
       ensure => file,
-      path  => "${home_dir}/.bashrc",
+      path  => "${homedir}/.bashrc",
       owner => $name,
       group => $name,
       source => 'puppet:///modules/system/bashrc',
