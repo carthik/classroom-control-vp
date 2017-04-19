@@ -35,11 +35,11 @@ host { 'master.puppetlabs.vm':
   ip           => '172.17.0.1',
   target       => '/etc/hosts',
 }
-host { 'tspeigner.puppetlabs.vm':
-  ensure       => 'present',
-  host_aliases => ['tspeigner'],
-  ip           => '172.17.0.3',
-  target       => '/etc/hosts',
-}
+#host { 'tspeigner.puppetlabs.vm':
+#  ensure       => 'present',
+#  host_aliases => ['tspeigner'],
+#  ip           => '172.17.0.3',
+#  target       => '/etc/hosts',
+#}
 
 }
