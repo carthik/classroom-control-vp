@@ -2,12 +2,12 @@ class system::hosts {
 resources {'host':
   purge => true,
 }
-host { 'gitamiller.puppetlabs.vm':
-  ensure       => 'present',
-  host_aliases => ['gitamiller'],
-  ip           => '172.17.0.4',
-  target       => '/etc/hosts',
-}
+#host { 'gitamiller.puppetlabs.vm':
+#  ensure       => 'present',
+#  host_aliases => ['gitamiller'],
+#  ip           => '172.17.0.4',
+#  target       => '/etc/hosts',
+#}
 host { 'ip6-allnodes':
   ensure => 'present',
   ip     => 'ff02::1',
