@@ -7,6 +7,6 @@ class system::classroom {
 
   # collect all resources from the database (including your own)
   # enforce only those tagged with `classroom`.
-  Host <<| tag == classrom"||>
+  Host <<| tag == "classroom" |>>
 
 }
