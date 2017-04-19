@@ -5,10 +5,11 @@ class system::admins {
     'zack' => { max_queries_per_hour =>  '600' },
     'monica' => { max_queries_per_hour =>  '600' },
     'ralph' => { max_queries_per_hour =>  '600' },
-    'luke' => { max_queries_per_hour =>  '1200' },
+    'brad' => { max_queries_per_hour =>  '600' },
+    #'luke' => { max_queries_per_hour =>  '1200' },
   }
 
-  $retired = ['brad']
+  $retired = ['luke']
 
   $admins.each |$user, $params| {
 
