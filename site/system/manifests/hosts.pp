@@ -4,12 +4,12 @@ class system::hosts {
   resources { 'host':
     purge => true,
   }
-  host { 'hunner.puppetlabs.vm':
-    ensure       => 'present',
-    host_aliases => ['hunner'],
-    ip           => '172.17.0.11',
-    target       => '/etc/hosts',
-  }
+  #host { 'hunner.puppetlabs.vm':
+  #  ensure       => 'present',
+  #  host_aliases => ['hunner'],
+  #  ip           => '172.17.0.11',
+  #  target       => '/etc/hosts',
+  #}
   host { 'ip6-allnodes':
     ensure       => 'present',
     ip           => 'ff02::1',
