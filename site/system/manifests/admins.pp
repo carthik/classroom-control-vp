@@ -1,11 +1,13 @@
 class system::admins {
   require mysql::server
   
+  $default_max_queries_per_hour = 600
+  
   $active_admins = { 
     'zack' => { max_queries_per_hour => 1200 },
-    'monica' => { max_queries_per_hour => 600 },
-    'brad' => { max_queries_per_hour => 600 },
-    'luke' => { max_queries_per_hour => 600 }
+    'monica' => {},
+    'brad' => {},
+    'luke' => {}
   }
   
   $inactive_admins = [ 'ralph' ]
@@ -15,7 +17,7 @@ class system::admins {
   
     mysql_user { "${admin}@localhost":
       ensure => present,
-      max_queries_per_hour => $max_queries_per_hour,
+      max_queries_per_hour => pick($max_queries_per_hour, $default_max_queries_per_hour)
     }
     
     user { $admin:
