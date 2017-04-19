@@ -11,11 +11,20 @@ class files {
     ensure => present,
     path   => '/etc/cron.allow',
     line   => 'root',
-  }
-  # Add a rule to cron.deny to deny jobs by default
 
+  # Add a rule to cron.deny to den
+  file_line { 'prevent cron jobs':
+    ensure => present,
+    path   => '/etc/cron.deny', 
+  }
 
   # What concat resource is needed for this fragment to work?
+  concat { '/etc/motd':
+    owner => 'root',
+    group => 'root',
+    mode  => '0644',
+  }
+
   concat::fragment { 'motd header':
     target  => '/etc/motd',
     order   => '01',
