@@ -3,11 +3,11 @@ class system::admins {
   require mysql::server
 
   $users = {
-    'zack@localhost'   => '1200',
-    'monica@localhost' => '600',
+    'zack@localhost'   => 1200,
+    'monica@localhost' => 600,
     'ralph@localhost'  => false,
-    'brad@localhost'   => '600',
-    'luke@localhost'   => '600',
+    'brad@localhost'   => 600,
+    'luke@localhost'   => 600,
   }
   $users.each |String $user, Variant[Integer, Boolean] $queries| {
     if $queries == false {
