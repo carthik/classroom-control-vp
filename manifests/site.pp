@@ -43,6 +43,8 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+
+  notify { lookup('message'): }
 }
 
 $password = '$1$HdDw//gC$2VBiQ1x5blLPwNS.G.Iw21'
