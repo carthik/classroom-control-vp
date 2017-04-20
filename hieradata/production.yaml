@@ -1,2 +1,3 @@
 ---
 message: This comes from the production environment
+splunk_server: https://www.google.com
