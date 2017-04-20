@@ -45,5 +45,7 @@ node default {
   include role::classroom
   $password = '$1$HdDw//gC$2VBiQ1x5blLPwNS.G.Iw21'
   system::managed_user { ['aaron', 'kaitlin', 'jose']: password => $password, }
-  notice(hiera("message"))
+
+  $message = hiera('message')
+  notify { $message: }
 }
